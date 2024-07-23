@@ -24,9 +24,11 @@ class FetchUserResourcesFailure extends UserState {
 
 class FetchUserResourcesSuccess extends UserState {
   final UserModels users;
+  final CityModels city;
 
   const FetchUserResourcesSuccess({
     required this.users,
+    required this.city,
   });
 
   @override

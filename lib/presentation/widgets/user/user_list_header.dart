@@ -7,11 +7,13 @@ class UserListHeader extends StatelessWidget implements PreferredSizeWidget {
   final Function() onSortTap;
   final TextEditingController searchController;
   final Function(String val) onChanged;
+  final Function() onCityFilterTap;
   const UserListHeader({
     super.key,
     required this.onSortTap,
     required this.searchController,
     required this.onChanged,
+    required this.onCityFilterTap,
   });
 
   @override
@@ -76,17 +78,20 @@ class UserListHeader extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 50,
-                width: 50,
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: MainColors.backgroundAlt,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: const Icon(
-                  Icons.filter_alt,
-                  size: 15,
+              InkWell(
+                onTap: onCityFilterTap,
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: MainColors.backgroundAlt,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(
+                    Icons.filter_alt,
+                    size: 15,
+                  ),
                 ),
               ),
             ],
