@@ -21,3 +21,5 @@
     3. User Tile Item
         a. User icon avatar di posisikan sebelah kiri sebagai profil user 
         b. Default data yang akan ditampilkan pertama kali adalah Nama dan Kota dari user agar tampilan terlihat lebih clean dan user dapat melihat data user lebih detail dengan menekan icon arrow pada ujung kanan Item
+    4. Create User Page
+        Dihalaman ini berisikan form isian sesuai data yang dibutuhkan oleh sisi backend server, alasan tombol 'save' di posisikan diatas agar ketika pengguna melakukan pengisian form untuk membuat user baru tombol tersebut tidak akan tertutup oleh keyboard 

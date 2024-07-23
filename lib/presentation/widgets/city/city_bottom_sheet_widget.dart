@@ -9,6 +9,7 @@ class CityBottomSheetWidget {
     required List<CityData> cityList,
     required Function(CityData item) onCitySelected,
     required Function() onResetTap,
+    bool? showResetButton,
   }) {
     showModalBottomSheet(
         context: context,
@@ -44,6 +45,7 @@ class CityBottomSheetWidget {
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
+                              if(showResetButton==null)
                               ElevatedButton(
                                 onPressed: onResetTap,
                                 style: ElevatedButton.styleFrom(
