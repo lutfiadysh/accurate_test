@@ -3,6 +3,7 @@ import 'package:accurate_lutfi/core/theme/main_colors.dart';
 import 'package:accurate_lutfi/data/entities/city_models/city_models.dart';
 import 'package:accurate_lutfi/data/entities/user_models/user_models.dart';
 import 'package:accurate_lutfi/presentation/blocs/user_bloc/user_bloc.dart';
+import 'package:accurate_lutfi/presentation/pages/create_user/create_user_page.dart';
 import 'package:accurate_lutfi/presentation/widgets/city/city_bottom_sheet_widget.dart';
 import 'package:accurate_lutfi/presentation/widgets/user/search_user_form_widget.dart';
 import 'package:accurate_lutfi/presentation/widgets/user/user_list_header.dart';
@@ -47,6 +48,11 @@ class _UserPageState extends State<UserPage> {
             appBar: UserListHeader(
               searchController: searchController,
               onSortTap: sortUserList,
+              selectedCity: selectedCity,
+              onAddTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (conteext) => CreateUserPage()));
+              },
               onCityFilterTap: () {
                 if (state is FetchUserResourcesSuccess) {
                   CityBottomSheetWidget.showCityBottomSheet(

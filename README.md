@@ -17,6 +17,7 @@
     2. User Page Filter Widget 
         a. Search bar di posisikan paling kiri dan ukurannya lebih lebar dibanding yang lain agar pengguna tidak kesulitan untuk mencari nama user yang ingin ditampilkan
         b. 2 button filter tambahan di samping kanan search bar di posisikan seperti itu agar tampilan lebih terlihat lebih clean
+        c. Tampilan untuk filter data user berdasarkan kota akan ditampilkan melalui Bottom Sheet Dialog karena user lebih familiar dengan tampilan seperti ini
     3. User Tile Item
         a. User icon avatar di posisikan sebelah kiri sebagai profil user 
         b. Default data yang akan ditampilkan pertama kali adalah Nama dan Kota dari user agar tampilan terlihat lebih clean dan user dapat melihat data user lebih detail dengan menekan icon arrow pada ujung kanan Item

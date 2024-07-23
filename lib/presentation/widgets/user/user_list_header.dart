@@ -1,5 +1,6 @@
 import 'package:accurate_lutfi/core/theme/fonts.dart';
 import 'package:accurate_lutfi/core/theme/main_colors.dart';
+import 'package:accurate_lutfi/data/entities/city_models/city_models.dart';
 import 'package:accurate_lutfi/presentation/widgets/user/search_user_form_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +9,16 @@ class UserListHeader extends StatelessWidget implements PreferredSizeWidget {
   final TextEditingController searchController;
   final Function(String val) onChanged;
   final Function() onCityFilterTap;
+  final Function() onAddTap;
+  final CityData? selectedCity;
   const UserListHeader({
     super.key,
     required this.onSortTap,
     required this.searchController,
     required this.onChanged,
     required this.onCityFilterTap,
+    required this.onAddTap,
+    required this.selectedCity,
   });
 
   @override
@@ -38,16 +43,19 @@ class UserListHeader extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        Container(
-          margin: const EdgeInsets.only(right: 16),
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: MainColors.backgroundAlt,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Icon(
-            Icons.add,
-            size: 15,
+        InkWell(
+          onTap: onAddTap,
+          child: Container(
+            margin: const EdgeInsets.only(right: 16),
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: MainColors.backgroundAlt,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: const Icon(
+              Icons.add,
+              size: 15,
+            ),
           ),
         ),
       ],
@@ -85,12 +93,17 @@ class UserListHeader extends StatelessWidget implements PreferredSizeWidget {
                   width: 50,
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: MainColors.backgroundAlt,
+                    color: selectedCity != null
+                        ? Colors.deepPurple
+                        : MainColors.backgroundAlt,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.filter_alt,
                     size: 15,
+                    color: selectedCity != null
+                        ? Colors.white
+                        : MainColors.textContentBlack,
                   ),
                 ),
               ),
